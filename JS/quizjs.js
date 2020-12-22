@@ -90,7 +90,10 @@ submitBtn.addEventListener('click', () =>{
         loadQuiz(); 
     }
         else{
-            quiz.innerHTML = `<h1>Your score is ${score}</h1>`;
+            quiz.innerHTML = `
+                <h1>Your score is ${score}</h1>
+                <button onclick="location.reload()">Reload</button>
+                `;
         }   
     
 });
