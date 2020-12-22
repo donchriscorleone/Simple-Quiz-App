@@ -81,15 +81,14 @@ function loadQuiz(){
 submitBtn.addEventListener('click', () =>{
     const answer = getSelected();
         
-        if (currentQuiz < quizData.length-1){
-            if (answerElements.id === quizData[currentQuiz].correct){
-                ++score;
-            }
-            currentQuiz++;
-            loadQuiz(); 
-        }
-
-  
+    if (answerElements.id === quizData[currentQuiz].correct){
+        score++;
+        console.log(score)
+    }
+    currentQuiz++;
+    if (currentQuiz < quizData.length){
+        loadQuiz(); 
+    }
         else{
             quiz.innerHTML = `<h1>Your score is ${score}</h1>`;
         }   
